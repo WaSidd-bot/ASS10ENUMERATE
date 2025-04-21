@@ -1,21 +1,73 @@
-public class Vehicle {
+public enum Vehicle {
+    //String[] A10Manuf = new String["Fairchild", "Amazon", "Pepsi"];
+
+    A10(new String[]{"Fairchild", "General Electric", "Grumman"}, 1977, 2025, 381, 120),
+    F14(new String[]{"Grumman", "Pratt-Whitney", "Hughes"}, 1969, 2006, 381, 120);
     
-    private String[] manufacturers;
+    private String[] manufacturer;
     private int birthYear;
     private int outOfServiceYear;
-    private double topSpeed;
-    private double stallSpeed;
+    private int topSpeed; //all speeds in knots
+    private int stallSpeed;
 
-    public Vehicle(String[] manufacturers, int birthYear, int outOfServiceYear, double topSpeed, double stallSpeed) {
-        this.manufacturers = manufacturers;
+    private Vehicle(String[] manufacturer, int birthYear, int outOfServiceYear, int topSpeed, int stallSpeed) {
+        this.manufacturer = manufacturer;
         this.birthYear = birthYear;
         this.outOfServiceYear = outOfServiceYear;
         this.topSpeed = topSpeed;
         this.stallSpeed = stallSpeed;
     }
 
-    public String[] getManufacturers(String[] contracters) {
-        return manufacturers;
+    public String[] getManufacturers() {
+        for(int a = 0; a < manufacturer.length; a++) {
+            System.out.println(manufacturer[a]);
+        }
+        return manufacturer;
+    }
+
+    public int getBirthYear() {
+        return birthYear;
+    }
+
+    public int getDecommissionYear() {
+        return outOfServiceYear;
+    }
+
+    public int getTopSpeed() {
+        return topSpeed;
+    }
+
+    public int getStallSpeed() {
+        return stallSpeed;
+    }
+
+    public int YearsInService() {
+        return outOfServiceYear - birthYear;
+    }
+
+    public void getBriefHistory() {
+
+        switch(this.ordinal()) {
+            case 0:
+                System.out.println("GAU-8 Avenger go brrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrtttttttttttttttttttttttttttt");
+            break;
+
+            default:
+                System.out.print("give a brief history of the selcted aircraft, maybe talk about the time period of manufacturing");
+        }
+        
+        }
+
+    public void commonManufacturers(Vehicle b) {
+
+        for (int i = 0; i < this.manufacturer.length; i++) {
+            for (int j = 0; j < b.manufacturer.length; j++) {
+                if (this.manufacturer[i].equals(b.manufacturer[j])) {
+
+                    System.out.println(b.manufacturer[j]);
+                }
+            }
+        }
     }
 
 }
@@ -24,13 +76,14 @@ public class Vehicle {
  - public String[] getManufacturers() {}
 also make a method to see if any two vehicles were worked on by the same company: 
 
-public String[] commonManufacturers()
+
 
  - public int YearsInService()
 return outOfServiceYear - birthyear;
 
- - public void getBriefHistory()
+ - public void getBriefHistory() {
 System.out.print("give a brief history of the selcted aircraft, maybe talk about the time period of manufacturing")
+}
 
  - 
 
