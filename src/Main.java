@@ -26,19 +26,19 @@ public class Main {
         Vehicle.values()[userInput - 1].getManufacturers();
 
         System.out.println(" -> Year the vehicle was put into production:");
-        Vehicle.values()[userInput - 1].getBirthYear();
+        System.out.println(Vehicle.values()[userInput - 1].getBirthYear());
 
         System.out.println(" -> Year the vehicle was retired/taken out of production:");
-        Vehicle.values()[userInput - 1].getDecommissionYear();
+        System.out.println(Vehicle.values()[userInput - 1].getDecommissionYear());
 
         System.out.println(" -> How many years the vehicle was in use/production:");
-        Vehicle.values()[userInput - 1].YearsInService();
+        System.out.println(Vehicle.values()[userInput - 1].YearsInService());
 
         System.out.println(" -> Top seepd in knots:");
-        Vehicle.values()[userInput - 1].getTopSpeed();
+        System.out.println(Vehicle.values()[userInput - 1].getTopSpeed());
 
         System.out.println(" -> Stall speed in knots:");
-        Vehicle.values()[userInput - 1].getStallSpeed();
+        System.out.println(Vehicle.values()[userInput - 1].getStallSpeed());
 
         System.out.println("now please enter the aircraft you would like to compare statistics to!");
         int inputSecondAircraft = scan.nextInt(); // comparison vehicle
@@ -46,7 +46,7 @@ public class Main {
         scan.close();
 
         System.out.println(" -> Here is a list of common manufacturers between the two vehicles selected:");
-        Vehicle.values()[userInput - 1].commonManufacturers(Vehicle.values()[inputSecondAircraft - 1]);
+        //System.out.println(Vehicle.values()[userInput - 1].commonManufacturers(Vehicle.values()[inputSecondAircraft - 1]));
 
     }
 }
