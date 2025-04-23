@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
 
-        final int LIST_NUMBER = 8;
+        final int LIST_NUMBER = 10;
 
         System.out.println("Hello operater!");
         System.out.println(
@@ -25,7 +25,7 @@ public class Main {
         System.out.println(" -> Year the vehicle was casted as an idea:");
         System.out.println(Vehicle.values()[userInput - 1].getBirthYear());
 
-        System.out.println(" -> Year the vehicle was retired/taken out of production:");
+        System.out.println(" -> Year the vehicle was retired/taken out of production (if current year, vehicle still in service):");
         System.out.println(Vehicle.values()[userInput - 1].getDecommissionYear());
 
         System.out.println(" -> How many years the vehicle was in use/production:");
