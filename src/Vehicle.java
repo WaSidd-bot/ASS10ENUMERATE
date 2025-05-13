@@ -1,8 +1,8 @@
 public enum Vehicle {
     
-    A10(new String[] { "Fairchild", "General Electric", "Grumman" }, 1977, 2025, 381, 120),
-    F16(new String[] { "General Dynamics", "Pratt-Whitney", "Lockheed Martin" }, 1976, 2025, 800, 140),
-    F18(new String[] { "McDonnell-Douglas", "Northrop", "Boeing" }, 1974, 2000, 1067, 135),
+    A10(new String[] { "Fairchild", "General Electric", "Grumman", "Hughes", "Boeing", "Martin", "Northrop" }, 1977, 2025, 381, 120),
+    F16(new String[] { "General Dynamics", "Pratt-Whitney", "Lockheed Martin", "General Electric", "Raytheon", "Northrop Grumman" }, 1976, 2025, 800, 140),
+    F18(new String[] { "McDonnell-Douglas", "Northrop", "Boeing", "" }, 1974, 2000, 1067, 135),
     ARROW(new String[] { "A.V.Roe", "Magellan", "Dowty" }, 1953, 1959, 1300, 170),
     SU35(new String[] { "Sukhoi", "UAC", "NPO" }, 1988, 2025, 1340, 142),
     MIG29(new String[] { "Mikoyan-Gurevich", "Klimov", "Avionika" }, 1977, 2025, 1310, 142),
@@ -33,28 +33,27 @@ public enum Vehicle {
     }
 
     public int getBirthYear() {
-        System.out.println(birthYear);
         return birthYear;
     }
 
     public int getDecommissionYear() {
-        System.out.println(outOfServiceYear);
         return outOfServiceYear;
     }
 
     public int getTopSpeed() {
-        System.out.println(topSpeed);
         return topSpeed;
     }
 
     public int getStallSpeed() {
-        System.out.println(stallSpeed);
         return stallSpeed;
     }
 
     public int YearsInService() {
-        System.out.println(outOfServiceYear - birthYear);
         return outOfServiceYear - birthYear;
+    }
+
+    public int SpeedRegime() {
+        return topSpeed - stallSpeed;
     }
 
     public void getBriefHistory() {
@@ -97,7 +96,6 @@ public enum Vehicle {
     }
 
     public void commonManufacturers(Vehicle b) {
-
         for (int i = 0; i < this.manufacturer.length; i++) {
             for (int j = 0; j < b.manufacturer.length; j++) {
                 if (this.manufacturer[i].equals(b.manufacturer[j])) {
@@ -107,24 +105,3 @@ public enum Vehicle {
         }
     }
 }
-
-/*
- * list of instance methods to implement:
- * - public String[] getManufacturers() {}
- * also make a method to see if any two vehicles were worked on by the same
- * company:
- * 
- * 
- * 
- * - public int YearsInService()
- * return outOfServiceYear - birthyear;
- * 
- * - public void getBriefHistory() {
- * System.out.
- * print("give a brief history of the selcted aircraft, maybe talk about the time period of manufacturing"
- * )
- * }
- * 
- * make methods that return the value of each instance variable, getBirthYear(),
- * getDecommissionYear(), getTopSpeed(), getStallSpeed()
- */
